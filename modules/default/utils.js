@@ -106,18 +106,10 @@ const getHeadersToSend = (requestHeaders) => {
  * @returns {string} to be used as the expected HTTP-headers component in CORS URL.
  */
 const getExpectedResponseHeadersString = function (expectedResponseHeaders) {
-	let expectedResponseHeadersString = "";
-	if (expectedResponseHeaders) {
-		for (const header of expectedResponseHeaders) {
-			if (expectedResponseHeadersString.length === 0) {
-				expectedResponseHeadersString = `${header}`;
-			} else {
-				expectedResponseHeadersString = `${expectedResponseHeadersString},${header}`;
-			}
-		}
-		return expectedResponseHeaders;
-	}
-	return undefined;
+        if (expectedResponseHeaders && expectedResponseHeaders.length > 0) {
+                return expectedResponseHeaders.join(",");
+        }
+        return undefined;
 };
 
 /**
