@@ -115,9 +115,9 @@ const getExpectedResponseHeadersString = function (expectedResponseHeaders) {
 				expectedResponseHeadersString = `${expectedResponseHeadersString},${header}`;
 			}
 		}
-		return expectedResponseHeaders;
-	}
-	return undefined;
+                return expectedResponseHeadersString;
+        }
+        return undefined;
 };
 
 /**
